@@ -48,7 +48,7 @@ This extension uses PeerJS for peer-to-peer communication. The PeerJS library is
 For reliable peer-to-peer connections, especially when participants are behind firewalls or certain types of NATs, the extension uses TURN servers. These servers relay traffic when a direct connection isn't possible.
 
 - TURN server credentials are stored in `js/config.js` (not included in git)
-- For deployment, you need to set up your own TURN servers or use a service like [Metered](https://www.metered.ca/tools/turn/) that provides TURN servers
+- For deployment, you need to set up your own TURN servers or use a service like [Metered](https://www.metered.ca/tools/openrelay/) that provides TURN servers
 - The template file `js/config.template.js` shows the expected format
 - **Important**: All users who want to sync with each other must use the same TURN server configuration
   - If you're distributing this extension to friends for a watch party, ensure everyone is using the same configuration
