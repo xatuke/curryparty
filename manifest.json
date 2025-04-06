@@ -1,0 +1,86 @@
+{
+  "manifest_version": 3,
+  "name": "Curry Party",
+  "version": "1.0",
+  "description": "Sync Netflix and Hotstar viewing with friends using peer-to-peer technology",
+  "permissions": ["storage", "tabs", "activeTab", "scripting", "webNavigation"],
+  "host_permissions": [
+    "*://*.netflix.com/*",
+    "*://*.hotstar.com/*",
+    "*://*.primevideo.com/*",
+    "*://*.youtube.com/*",
+    "*://*.disneyplus.com/*",
+    "*://*.hulu.com/*",
+    "*://*.hbomax.com/*",
+    "*://*.max.com/*",
+    "*://*.peerjs.com/*",
+    "*://*.animepahe.ru/*",
+    "*://*.crunchyroll.com/*",
+    "*://*.kwik.si/*",
+    "https://0.peerjs.com/*"
+  ],
+  "minimum_chrome_version": "88",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.netflix.com/*", 
+        "*://*.hotstar.com/*",
+        "*://*.primevideo.com/*",
+        "*://*.youtube.com/*",
+        "*://*.disneyplus.com/*",
+        "*://*.hulu.com/*",
+        "*://*.hbomax.com/*",
+        "*://*.max.com/*",
+        "*://*.animepahe.ru/*",
+        "*://*.crunchyroll.com/*",
+        "*://*.kwik.si/*"
+      ],
+      "js": ["lib/peerjs.min.js", "js/config.js", "js/content.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+    },
+    {
+      "matches": [
+        "*://*.netflix.com/*"
+      ],
+      "js": ["js/netflix.js"],
+      "world": "MAIN"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["lib/peerjs.min.js"],
+      "matches": [
+        "*://*.netflix.com/*", 
+        "*://*.hotstar.com/*",
+        "*://*.primevideo.com/*",
+        "*://*.youtube.com/*",
+        "*://*.disneyplus.com/*",
+        "*://*.hulu.com/*",
+        "*://*.hbomax.com/*",
+        "*://*.max.com/*",
+        "*://*.animepahe.ru/*",
+        "*://*.crunchyroll.com/*",
+        "*://*.kwik.si/*",
+        "https://*/*",
+        "http://*/*"
+      ]
+    }
+  ],
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

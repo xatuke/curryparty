@@ -1,0 +1,196 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  width: 320px;
+  height: 420px;
+}
+
+.container {
+  padding: 16px;
+}
+
+h1 {
+  font-size: 24px;
+  color: #e50914;
+  margin-top: 0;
+  text-align: center;
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.status-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#status {
+  margin-right: 8px;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.online {
+  background-color: #4CAF50;
+}
+
+.offline {
+  background-color: #F44336;
+}
+
+#room-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#create-room, #join-room {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  background-color: #e50914;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #b2070f;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.room-id-display {
+  display: flex;
+  gap: 8px;
+}
+
+.room-id-display input {
+  flex-grow: 1;
+}
+
+.hidden {
+  display: none;
+}
+
+#room-controls {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#leave-room-btn {
+  background-color: #6c757d;
+  width: 100%;
+  margin-top: 16px;
+}
+
+#leave-room-btn:hover {
+  background-color: #5a6268;
+}
+
+/* Peer list styles */
+#peer-list-section {
+  margin-top: 20px;
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+}
+
+#peer-list-section h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.peer-list {
+  max-height: 120px;
+  overflow-y: auto;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 5px;
+  background-color: #f9f9f9;
+}
+
+.peer-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 8px;
+  margin-bottom: 6px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.peer-info {
+  display: flex;
+  align-items: center;
+}
+
+.peer-status {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.peer-status.active {
+  background-color: #4CAF50;
+}
+
+.peer-status.inactive {
+  background-color: #F44336;
+}
+
+.peer-id {
+  font-size: 12px;
+  font-family: monospace;
+  color: #555;
+}
+
+.remove-peer-btn {
+  background-color: #F44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.remove-peer-btn:hover {
+  background-color: #d32f2f;
+}
+
+.no-peers-message {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+  padding: 10px;
+  margin: 0;
+}

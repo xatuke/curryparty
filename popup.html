@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Curry Party</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Curry Party</h1>
+    <div class="status-container">
+      <div id="status">Not connected</div>
+      <div class="indicator offline" id="status-indicator"></div>
+    </div>
+    
+    <div id="room-container">
+      <div id="create-room">
+        <h2>Create a Room</h2>
+        <button id="create-room-btn">Create Room</button>
+        <div id="room-id-container" class="hidden">
+          <p>Share this room ID with friends:</p>
+          <div class="room-id-display">
+            <input type="text" id="room-id" readonly>
+            <button id="copy-room-id">Copy</button>
+          </div>
+        </div>
+      </div>
+      
+      <div id="join-room">
+        <h2>Join a Room</h2>
+        <input type="text" id="join-room-id" placeholder="Enter Room ID">
+        <button id="join-room-btn">Join Room</button>
+      </div>
+    </div>
+    
+    <div id="room-controls" class="hidden">
+      <h2>Room: <span id="current-room"></span></h2>
+      <p>Participants: <span id="participant-count">1</span></p>
+      <button id="leave-room-btn">Leave Room</button>
+      
+      <!-- Peer list section (only shown to host) -->
+      <div id="peer-list-section" class="hidden">
+        <h3>Connected Peers</h3>
+        <div id="peer-list" class="peer-list">
+          <p class="no-peers-message">No other peers connected</p>
+          <!-- Peer entries will be added here dynamically -->
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="js/popup.js"></script>
+</body>
+</html>
